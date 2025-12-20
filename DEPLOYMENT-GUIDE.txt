@@ -1,0 +1,84 @@
+# DEPLOYMENT GUIDE - Launch Assistant to Vercel
+
+## What You Have
+A complete, ready-to-deploy Launch Assistant app in the `launch-assistant-deploy` folder.
+
+## Step-by-Step Deployment (Takes 2 Minutes!)
+
+### Step 1: Download Your Files
+1. Download the entire `launch-assistant-deploy` folder from Claude
+2. Save it somewhere you can find it (like your Desktop)
+3. Make sure you have ALL the files inside the folder
+
+### Step 2: Go to Vercel
+1. Open https://vercel.com in your browser
+2. You should already be logged in with your new account
+3. You'll see your dashboard
+
+### Step 3: Import Your Project
+1. Click the big "Add New..." button (top right)
+2. Select "Project" from the dropdown
+3. You'll see "Import Git Repository" - IGNORE THIS
+4. Scroll down and look for "Import" or "Deploy" section
+5. Click "Browse" or drag & drop your `launch-assistant-deploy` folder
+
+### Step 4: Configure (Auto-Detected!)
+Vercel will automatically detect:
+- Framework: Vite
+- Build Command: `npm run build`
+- Output Directory: `dist`
+
+**YOU DON'T NEED TO CHANGE ANYTHING!** Vercel is smart and will set this up automatically.
+
+### Step 5: Deploy
+1. Click the big blue "Deploy" button
+2. Wait 30-60 seconds while it builds
+3. Watch the progress (it's fun to see!)
+4. When you see "Congratulations!" with confetti 🎉 - you're LIVE!
+
+### Step 6: Get Your URL
+1. You'll see your app URL (something like: `launch-assistant-abc123.vercel.app`)
+2. Click the URL to test it
+3. Share this URL with your students!
+
+## What Happens Next?
+
+✅ Your app is now LIVE on the internet
+✅ Students can visit the URL anytime
+✅ Their progress saves automatically in their browser
+✅ You can update it anytime by re-deploying
+
+## Adding a Custom Domain (Optional - Do Later)
+
+Once you test and love it, you can add your own domain:
+1. Go to your project in Vercel
+2. Click "Settings" → "Domains"
+3. Add your domain (like `launch.yourdomain.com`)
+4. Vercel gives you DNS instructions
+5. Update your domain settings
+6. Done!
+
+## Troubleshooting
+
+**If deploy fails:**
+- Make sure you uploaded the ENTIRE folder, not just some files
+- Check that package.json is included
+- Try the Vercel CLI method instead (see README.md)
+
+**If you get stuck:**
+- Vercel has amazing support docs at https://vercel.com/docs
+- Or just ask me and I'll help!
+
+## Need to Update Your App Later?
+
+1. Make changes to the files
+2. Go back to Vercel dashboard
+3. Click your project
+4. Go to "Deployments"
+5. Re-upload the folder
+6. New version goes live!
+
+---
+
+YOU'VE GOT THIS! 🚀
+The whole process literally takes 2 minutes once you try it.
