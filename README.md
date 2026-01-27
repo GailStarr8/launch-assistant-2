@@ -1,50 +1,60 @@
-# Launch Assistant
+# Launch Assistant - 7-Week AI-Powered Launch Program
 
-Your personalized launch roadmap with progress tracking and daily motivation.
+A complete launch planning dashboard for students to manage their launch timelines with week-by-week task tracking.
 
-## Deploy to Vercel
+## Features
 
-### Option 1: Deploy via Vercel Dashboard (Easiest)
+- 3 Complete Launch Types: Webinar, Challenge, Video Series
+- 9-week structured program with goals and tasks
+- Week-by-week progress tracking
+- Current Week Focus vs Full Timeline views
+- Catch-up list for overdue tasks
+- Automatic date calculations
+- Export functionality
+- Browser-based storage (no login required)
 
-1. Go to https://vercel.com
-2. Click "Add New" → "Project"
-3. Click "Import Git Repository" OR use the Import button
-4. Upload this entire folder (you can drag & drop or use the file picker)
-5. Vercel will auto-detect the settings
-6. Click "Deploy"
-7. Done! You'll get your live URL in about 30 seconds
+## Deployment Instructions
 
-### Option 2: Deploy via Vercel CLI
+### Option 1: Deploy to Vercel (Recommended)
 
-```bash
-npm install -g vercel
-vercel
-```
+1. **Push to GitHub:**
+   - Go to https://github.com/new
+   - Create a new repository called "launch-assistant"
+   - Don't initialize with README (we have files already)
+   - Follow the instructions to push existing code
 
-Follow the prompts and your app will be live!
+2. **Connect to Vercel:**
+   - Go to https://vercel.com
+   - Sign in with GitHub
+   - Click "Add New" → "Project"
+   - Import your "launch-assistant" repository
+   - Framework Preset: **Vite**
+   - Click "Deploy"
+
+3. **Done!** Your app will be live at a URL like: `https://launch-assistant-xxx.vercel.app`
+
+### Updating Your Live App
+
+Once connected to Vercel, every time you push changes to GitHub, Vercel automatically deploys the update within 60 seconds!
+
+**To update:**
+1. Edit files on GitHub (click the pencil icon)
+2. Commit changes
+3. Wait 60 seconds
+4. Refresh your live URL - changes are live!
 
 ## Local Development
-
-If you want to run this locally first:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open http://localhost:5173
+Open http://localhost:5173 to view in browser.
 
-## Features
+## Built With
 
-- ✅ Personalized launch roadmaps based on launch type and date
-- ✅ Week-by-week task breakdown
-- ✅ Progress tracking with checkboxes
-- ✅ Phase progress visualization
-- ✅ Daily motivational messages
-- ✅ Automatic progress saving
-- ✅ Export functionality
-- ✅ Mobile responsive
-
-## Customization
-
-To customize the launch frameworks, edit the task lists in `src/App.jsx` in the `generateSamplePlan` function.
+- React 18.2.0
+- Vite 4.4.5
+- Tailwind CSS 3.3.3
+- Lucide React (icons)
