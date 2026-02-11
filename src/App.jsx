@@ -23,6 +23,7 @@ const LaunchAssistant = () => {
 
   // Load saved data from storage on mount
   useEffect(() => {
+  const loadSavedData = () => {
     try {
       const saved = localStorage.getItem('launch-plan');
       if (saved) {
@@ -34,13 +35,13 @@ const LaunchAssistant = () => {
         setTasks(planData.tasks);
         setHasCompletedWeek1(planData.hasCompletedWeek1 || false);
         setShowDashboard(true);
-        }
-      } catch (error) {
-        console.log('No saved plan found');
       }
-    };
-    loadSavedData();
-  }, []);
+    } catch (error) {
+      console.log('No saved plan found');
+    }
+  };
+  loadSavedData();
+}, []);
 
   // Save data whenever tasks change
   useEffect(() => {
