@@ -1020,7 +1020,7 @@ const LaunchAssistant = () => {
   const completedTasks = tasks.filter(t => t.completed).length;
   const currentWeek = getCurrentWeek();
   const displayWeek = focusWeek || currentWeek; // Use manual focus week if set, otherwise current week
-  const hasFullPlan = launchType !== '';
+  const hasFullPlan = tasks.some(t => t.week > 1);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 p-4 md:p-8">
