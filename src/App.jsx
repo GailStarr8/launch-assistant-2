@@ -100,6 +100,17 @@ const LaunchAssistant = () => {
     setIsGenerating(true);
     
     const fullPlan = generateCompletePlan(launchType, startDate, launchEventDate, customDescription);
+
+// Preserve Week 1 completed state
+const week1CompletedIds = {};
+tasks.filter(t => t.week === 1).forEach(t => {
+  week1CompletedIds[t.task] = t.completed;
+});
+fullPlan.forEach(t => {
+  if (t.week === 1 && week1CompletedIds[t.task] !== undefined) {
+    t.completed = week1CompletedIds[t.task];
+  }
+});
     
     const delay = launchType === 'custom' ? 3000 : 1500;
     await new Promise(resolve => setTimeout(resolve, delay));
