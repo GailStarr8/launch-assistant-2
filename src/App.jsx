@@ -23,18 +23,17 @@ const LaunchAssistant = () => {
 
   // Load saved data from storage on mount
   useEffect(() => {
-    const loadSavedData = async () => {
-      try {
-        const savedPlan = await window.storage.get('launch-plan');
-        if (savedPlan && savedPlan.value) {
-          const planData = JSON.parse(savedPlan.value);
-          setStartDate(planData.startDate);
-          setLaunchType(planData.launchType || '');
-          setLaunchEventDate(planData.launchEventDate || '');
-          setCustomDescription(planData.customDescription || '');
-          setTasks(planData.tasks);
-          setHasCompletedWeek1(planData.hasCompletedWeek1 || false);
-          setShowDashboard(true);
+    try {
+      const saved = localStorage.getItem('launch-plan');
+      if (saved) {
+        const planData = JSON.parse(saved);
+        setStartDate(planData.startDate);
+        setLaunchType(planData.launchType || '');
+        setLaunchEventDate(planData.launchEventDate || '');
+        setCustomDescription(planData.customDescription || '');
+        setTasks(planData.tasks);
+        setHasCompletedWeek1(planData.hasCompletedWeek1 || false);
+        setShowDashboard(true);
         }
       } catch (error) {
         console.log('No saved plan found');
@@ -46,15 +45,14 @@ const LaunchAssistant = () => {
   // Save data whenever tasks change
   useEffect(() => {
     if (tasks.length > 0) {
-      const savePlan = async () => {
-        try {
-          await window.storage.set('launch-plan', JSON.stringify({
-            startDate,
-            launchType,
-            launchEventDate,
-            customDescription,
-            tasks,
-            hasCompletedWeek1
+      try {
+        localStorage.setItem('launch-plan', JSON.stringify({
+          startDate,
+          launchType,
+          launchEventDate,
+          customDescription,
+          tasks,
+          hasCompletedWeek1
           }));
         } catch (error) {
           console.error('Error saving plan:', error);
@@ -735,9 +733,9 @@ const LaunchAssistant = () => {
     }));
   };
 
-  const resetPlan = async () => {
+  const resetPlan = () => {
     try {
-      await window.storage.delete('launch-plan');
+      localStorage.removeItem('launch-plan');
     } catch (error) {
       console.log('No saved plan to delete');
     }
