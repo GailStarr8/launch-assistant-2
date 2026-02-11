@@ -54,12 +54,10 @@ const LaunchAssistant = () => {
           customDescription,
           tasks,
           hasCompletedWeek1
-          }));
-        } catch (error) {
-          console.error('Error saving plan:', error);
-        }
-      };
-      savePlan();
+        }));
+      } catch (error) {
+        console.error('Error saving plan:', error);
+      }
     }
   }, [tasks, startDate, launchType, launchEventDate, customDescription, hasCompletedWeek1]);
 
